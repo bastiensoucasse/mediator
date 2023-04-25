@@ -58,5 +58,5 @@ setup(
     url=about["__url__"],
     packages=find_packages(),
     install_requires=requirements,
-    extra_requires={"dev": ["black", "pylint"]},
+    extras_require={"dev": ["black", "pylint"]},
 )

@@ -1,9 +1,9 @@
 """
 Mediator: Profuder’s rebranded popular TV API.
 
-This module defines the Mediator package, which provides an API for accessing and managing TV shows, episodes, and
-ratings. The package includes several modules and classes that implement the API functionality, as well as utility
-functions and constants that are used throughout the package.
+This module defines the Mediator package, which provides an API for accessing and managing movies and TV shows. The
+package includes several modules and classes that implement the API functionality, as well as utility functions and
+constants that are used throughout the package.
 
 The main API classes and functions are exported at the package level, so they can be easily accessed by other modules
 or applications that use the package.

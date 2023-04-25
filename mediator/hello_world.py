@@ -2,6 +2,7 @@
 Hello world script.
 """
 
+
 def hello_world() -> None:
     """
     Prints "Hello, World!" to the console.

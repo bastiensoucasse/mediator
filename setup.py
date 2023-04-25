@@ -5,6 +5,20 @@ This script uses setuptools to define the package metadata, including the name, 
 The metadata is read from the `__init__.py` file, while the long description is read from the `README.md` file. The
 dependencies are read from the `requirements.txt` file.
 
+To install the package and its dependencies, run:
+
+    $ pip install .
+
+This will download and install the package from the PyPI repository, along with its dependencies specified in the
+`requirements.txt` file.
+
+To install the package for development and testing, run:
+
+    $ pip install -e ".[dev]"
+
+This will install the package in editable mode, along with the development and testing dependencies specified in the
+`extras_require` field of the setup() call.
+
 To build and distribute the package, run:
 
     $ python setup.py sdist bdist_wheel
@@ -13,27 +27,13 @@ To build and distribute the package, run:
 This will create a source distribution and a wheel distribution in the `dist` directory, and upload them to the PyPI
 repository using twine.
 
-To install the package and its dependencies, run:
-
-    $ pip install mediator
-
-This will download and install the package from the PyPI repository, along with its dependencies specified in the
-`requirements.txt` file.
-
-To install the package for development and testing, run:
-
-    $ pip install -e .[dev]
-
-This will install the package in editable mode, along with the development and testing dependencies specified in the
-`extras_require` field of the setup() call.
-
 For more information on how to use and contribute to the package, see the project repository at
 https://github.com/bastiensoucasse/mediator.
 """
 
 from typing import Dict
 
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 with open("README.md", encoding="utf-8") as f:
     readme = f.read()

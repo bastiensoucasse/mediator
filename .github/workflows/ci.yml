@@ -39,9 +39,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -e ".[dev]"
     - name: Build package
-      run: |
-        pip install --upgrade setuptools
-        python setup.py sdist bdist_wheel
+      run: python setup.py sdist
 
   # test:
   #   runs-on: ubuntu-latest
@@ -78,6 +76,5 @@ jobs:
   #       pip install -e ".[dev]"
   #   - name: Deploy package
   #     run: |
-  #       pip install --upgrade setuptools
-  #       python setup.py sdist bdist_wheel
+  #       python setup.py sdist
   #       twine upload dist/*

@@ -19,9 +19,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install -e ".[dev]"
     - name: Format check
-      run: black --diff --check <package>
+      run: black --diff --check mediator
     - name: Lint check
-      run: pylint <package>
+      run: pylint mediator
 
   build:
     runs-on: ubuntu-latest

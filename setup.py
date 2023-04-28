@@ -1,31 +1,17 @@
 """
 Package setup script for Mediator, Profuder’s rebranded popular TV API.
 
-This script uses setuptools to define the package metadata, including the name, version, description, and dependencies.
-The metadata is read from the `__init__.py` file, while the long description is read from the `README.md` file. The
-dependencies are read from the `requirements.txt` file.
-
 To install the package and its dependencies, run:
 
     $ pip install .
 
-This will download and install the package from the PyPI repository, along with its dependencies specified in the
-`requirements.txt` file.
+This will download and install the package from the PyPI repository, along with its specified dependencies.
 
 To install the package for development and testing, run:
 
     $ pip install -e ".[dev]"
 
-This will install the package in editable mode, along with the development and testing dependencies specified in the
-`extras_require` field of the setup() call.
-
-To build and distribute the package, run:
-
-    $ python setup.py sdist bdist_wheel
-    $ twine upload dist/*
-
-This will create a source distribution and a wheel distribution in the `dist` directory, and upload them to the PyPI
-repository using twine.
+This will install the package in editable mode, along with the development and testing dependencies.
 
 For more information on how to use and contribute to the package, see the project repository at
 https://github.com/bastiensoucasse/mediator.
@@ -33,13 +19,10 @@ https://github.com/bastiensoucasse/mediator.
 
 from typing import Dict
 
-from setuptools import find_packages, setup
+from setuptools import setup, find_packages
 
 with open("README.md", encoding="utf-8") as f:
     readme = f.read()
-
-with open("requirements.txt", encoding="utf-8") as f:
-    requirements = f.read().splitlines()
 
 about: Dict[str, str] = {}
 with open("mediator/__init__.py", encoding="utf-8") as f:
@@ -51,12 +34,12 @@ setup(
     description=about["__doc__"],
     long_description=readme,
     long_description_content_type="text/markdown",
+    url=about["__url__"],
     author=about["__author__"],
-    author_email=about["__email__"],
+    author_email=about["__author_email__"],
     maintainer=about["__maintainer__"],
     maintainer_email=about["__maintainer_email__"],
-    url=about["__url__"],
     packages=find_packages(),
-    install_requires=requirements,
-    extras_require={"dev": ["black", "pylint"]},
+    install_requires=[],
+    extras_require={"dev": ["black", "mypy", "pylint", "pytest", "pytest-cov", "pytest-mypy"]},
 )
